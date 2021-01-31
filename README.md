@@ -18,6 +18,8 @@ Parses [Discord API Docs](https://github.com/discord/discord-api/docs)' MD files
 
 You're always welcome to contribute!
 
+Please use `deno fmt` for formatting.
+
 ## License
 
 Check [LICENSE](LICENSE) for more info.
