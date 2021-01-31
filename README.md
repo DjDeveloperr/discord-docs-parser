@@ -11,7 +11,8 @@ Parses [Discord API Docs](https://github.com/discord/discord-api/docs)' MD files
 
 ## TODO/Ideas
 
-- Write "language plugins" to create typings for various other languages.
+- Write more language plugins to create typings for various other languages.
+- Look for anything missing from typings generated.
 
 ## Contributing
 
