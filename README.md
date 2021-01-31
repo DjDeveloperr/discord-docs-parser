@@ -6,8 +6,10 @@ Parses [Discord API Docs](https://github.com/discord/discord-api/docs)' MD files
 
 - Clone this repo.
 - Clone [discord-api-docs](https://github.com/discord/discord-api/docs) repo to `repo` folder.
-- Run `deno run --allow-read --allow-write mod.ts`.
-  - `docs.ts` and `docs.json` will appear in same directory.
+- Run `deno run --allow-read --allow-write plugins/json.ts`
+  - This will generate a `docs.json`.
+  - For TypeScript types, use `plugins/typescript.ts` instead.
+  - You can optionally tell script the filename (in args) to write output to.
 
 ## TODO/Ideas
 
