@@ -103,6 +103,7 @@ export function fixType(i: string, names: string[]) {
         .replaceAll("\\", "")
         .replaceAll("*", "");
       if (e == "ISO8601 timestamp") return "timestamp";
+      if (e.toLowerCase() == "string") return "string";
       let isarr = false;
       if (e.startsWith("array")) {
         e = e.replaceAll("array of", "").replaceAll("array ", "").trim();
@@ -115,7 +116,7 @@ export function fixType(i: string, names: string[]) {
       if (e == "mixed") e = "any";
       if (e == "int") e = "integer";
       if (e.endsWith("s")) e = e.substr(0, e.length - 1);
-      if (!PRIMARY_TYPES.includes(e.toLowerCase())) {
+      if (!PRIMARY_TYPES.includes(e.toLowerCase().trim())) {
         e = stripPartial(pascalCase(e));
         if (e == "Account") e = "IntegrationAccount";
         if (e == "Sticker") e = "MessageSticker";
@@ -127,6 +128,7 @@ export function fixType(i: string, names: string[]) {
         if (e == "TeamMember") e = "TeamMembers";
         if (e == "APartialEmoji") e = "Emoji";
         if (e == "ClientStatu") e = "ClientStatus";
+        if (e.includes("MessageReference")) return "MessageReferencePayload";
         let f1 =
           e == "string" ? undefined : names.find((n) => e + "Payload" == n);
         if (f1) e = f1;

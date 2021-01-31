@@ -9,7 +9,7 @@ export default function parse({ structs, endpoints, enums }: ParsedDocs) {
     if (e.description) lines.push(`/** ${e.description} */`);
     lines.push(`export enum ${e.name} {`);
     for (const f of e.fields) {
-      if (f.description) lines.push(`${IDENT} /** ${f.description} */`);
+      if (f.description) lines.push(`${IDENT}/** ${f.description} */`);
       lines.push(`${IDENT}${f.name} = ${f.value},`);
     }
     lines.push("}\n");
@@ -20,7 +20,7 @@ export default function parse({ structs, endpoints, enums }: ParsedDocs) {
     if (e.description) lines.push(`/** ${e.description} */`);
     lines.push(`export interface ${e.name} {`);
     for (const f of e.fields) {
-      if (f.description) lines.push(`${IDENT} /** ${f.description} */`);
+      if (f.description) lines.push(`${IDENT}/** ${f.description} */`);
       let types = f.type.split("|").map((e) => e.trim());
       for (let i = 0; i < types.length; i++) {
         let type = types[i];

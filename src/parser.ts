@@ -221,6 +221,7 @@ export const parseFileTree = (list: FileTree): ParsedDocs => {
           }
           if (name == "PresenceUpdateEventFieldsPayload")
             name = "PresenceUpdatePayload";
+          if (structs.find((e) => e.name == name)) continue;
           structs.push({
             name,
             description: desc,
